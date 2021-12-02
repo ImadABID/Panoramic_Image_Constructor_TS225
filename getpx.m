@@ -6,17 +6,20 @@ function px = getpx(H,pt,origine,panel)
 
 coor_homogene_origine = [pt(1);pt(2);1];
 
-coor_homogene_panel = H*coor_homogene_origine;
+coor_homogene_panel = floor(H*coor_homogene_origine);
+
+%fprintf("(%f, %f) -> (%f, %f)\n", coor_homogene_origine(1), coor_homogene_origine(2), coor_homogene_panel(1), coor_homogene_panel(2));
 
 isinside_panel = (...
-    (coor_homogene_panel(1) > 0 && h_panel >= coor_homogene_panel(1)) && ...
-    (coor_homogene_panel(2) >0 && w_panel >= coor_homogene_panel(2))...
+    (coor_homogene_panel(1) > 0 && w_panel >= coor_homogene_panel(1)) && ...
+    (coor_homogene_panel(2) >0 && h_panel >= coor_homogene_panel(2))...
 );
 
 if( isinside_panel)
-    px = panel(coor_homogene_panel(1),coor_homogene_panel(2),:);
+    %fprintf("isinside_panel\n");
+    px = panel(coor_homogene_panel(2), coor_homogene_panel(1), :);
 else
-    px = origine(coor_homogene_origine(1),coor_homogene_origine(2),:);
+    px = origine(coor_homogene_origine(2), coor_homogene_origine(1), :);
 end
 
 
