@@ -4,8 +4,6 @@ function H = homographic_matrix(pts_o, pts_t)
     % pts_o : [x1, y1; x2, y2; x3, y3; x3, y3]
     % pts_t : [x1, y1; x2, y2; x3, y3; x3, y3]
     %
-
-    h_vect = zeros(1, 8);
     
     A = zeros(8, 8);
     B = zeros(8, 1);
@@ -18,9 +16,11 @@ function H = homographic_matrix(pts_o, pts_t)
         B(2*pt_index, 1) = pts_t(pt_index, 2);
     end
 
+    h_vect = A \ B;
     
+
     
-    h_vect = [h_vect, 1];
-    H = reshape(h_vect, 3, h_vect);
+    h_vect = [h_vect; 1];
+    H = reshape(h_vect', 3, 3);
 
 end
