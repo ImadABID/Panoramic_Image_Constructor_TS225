@@ -28,6 +28,10 @@ pts_t = [...
 H = homographic_matrix(pts_o,pts_t);
 %H = homographic_matrix(pts_t, pts_o);
 
+output = double(output);
+origine = double(origine);
+panel = double(panel);
+
 for i = 1:h_origine
     for j = 1:w_origine
         output(i,j,:) = getpx(H, [j, i], origine, panel); 

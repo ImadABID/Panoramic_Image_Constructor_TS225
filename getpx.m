@@ -6,7 +6,7 @@ function px = getpx(H,pt,origine,panel)
 
 coor_homogene_origine = [pt(1);pt(2);1];
 
-coor_homogene_panel = floor(H*coor_homogene_origine);
+coor_homogene_panel = round(H*coor_homogene_origine);
 
 %fprintf("(%f, %f) -> (%f, %f)\n", coor_homogene_origine(1), coor_homogene_origine(2), coor_homogene_panel(1), coor_homogene_panel(2));
 
