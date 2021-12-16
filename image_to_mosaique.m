@@ -4,6 +4,6 @@ function mosaique = image_to_mosaique(image)
 
     mosaique.image = image;
     mosaique.masque = ones(h, w);
-    mosaique.boite = [1, 1; h, w];
+    mosaique.boite = [1, 1; w, h];
 
 end
