@@ -4,6 +4,6 @@ function mosaique = image_to_mosaique(image)
 
     mosaique.image = image;
     mosaique.masque = ones(h, w);
-    mosaique.boite = [1, 1; w, h];
+    mosaique.boite = [0, 0; w-1, h-1]; % Coordonées géographique
 
 end
