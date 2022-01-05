@@ -40,7 +40,7 @@ for i=2:1:images_nbr
 
     tmp_mosaique  = transform_mosaique(tmp_mosaique, H_for_boite, H_for_browse);
 
-    assembled_mosaique = merge_two_mosaique(tmp_mosaique, assembled_mosaique);
+    assembled_mosaique = merge_two_mosaique(assembled_mosaique, tmp_mosaique);
     
     figure(mosaique_figure), imshow(uint8(assembled_mosaique.image));
 
