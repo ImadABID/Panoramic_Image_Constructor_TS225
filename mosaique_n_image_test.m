@@ -14,7 +14,10 @@ image = rgb2gray(imread(images_path(1)));
 assembled_mosaique = image_to_mosaique(image);
 
 mosaique_figure = figure;
+mosaique_figure.Position(1:2) = [200 400];
+
 ginput_figure = figure;
+ginput_figure.Position(1:2) = [1000 400];
 
 figure(mosaique_figure),
 imshow(uint8(assembled_mosaique.image));

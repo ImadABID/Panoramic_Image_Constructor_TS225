@@ -7,8 +7,8 @@ function new_mosaique = merge_two_mosaique(mosaique1, mosaique2)
     ];
 
     %% init masque & image
-    new_h = new_mosaique.boite(2, 2) - new_mosaique.boite(1, 2)+1;
-    new_w = new_mosaique.boite(2, 1) - new_mosaique.boite(1, 1)+1;
+    new_h = new_mosaique.boite(2, 2) - new_mosaique.boite(1, 2) + 1;
+    new_w = new_mosaique.boite(2, 1) - new_mosaique.boite(1, 1) + 1;
 
     new_mosaique.masque = zeros(new_h, new_w);
     new_mosaique.image = zeros(new_h, new_w);
