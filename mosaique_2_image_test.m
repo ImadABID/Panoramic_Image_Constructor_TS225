@@ -2,14 +2,17 @@ clear all;
 close all;
 clc;
 
-origine_path = "our_images/petites_imgs/img01.jpg.jpeg";
-target_path = "our_images/petites_imgs/img02.jpg.jpeg";
+%origine_path = "our_images/petites_imgs/img01.jpg.jpeg";
+%target_path = "our_images/petites_imgs/img02.jpg.jpeg";
+
+origine_path = "our_images/img01.jpg";
+target_path = "our_images/img02.jpg";
 
 origine = imread(origine_path);
 target = imread(target_path);
 
-origine = rgb2gray(origine);
-target = rgb2gray(target);
+%origine = rgb2gray(origine);
+%target = rgb2gray(target);
 
 % figure(1),
 % subplot(1,2,1);
